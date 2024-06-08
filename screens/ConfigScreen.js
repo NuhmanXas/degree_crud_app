@@ -1,6 +1,7 @@
+import { Text } from "react-native";
 
 function ConfigScreen() {
-    return <>Config</>;
+    return <Text>Config</Text>;
 }
 
 export default ConfigScreen;

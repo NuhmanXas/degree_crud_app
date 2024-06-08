@@ -8,6 +8,9 @@ import HomeScreen from './screens/HomeScreen';
 import TaskScreen from './screens/TaskScreen';
 import ConfigScreen from './screens/ConfigScreen';
 import AboutScreen from './screens/AboutScreen';
+import LoginScreen from './screens/LoginScreen';
+import SignUpScreen from './screens/SignUpScreen';
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 
 // Stack Navigator for Login and SignUp
@@ -52,7 +55,24 @@ export default function App() {
   return (
     <AuthProvider>
       <NavigationContainer>
-
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Login"
+            component={LoginScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="SignUp"
+            component={SignUpScreen}
+            options={{ headerShown: false }}
+          />
+          {/* MainAppTabs acts as a single screen within the stack */}
+          <Stack.Screen
+            name="MainApp"
+            component={MainAppTabs}
+            options={{ headerShown: false }} // Optionally hide the header
+          />
+        </Stack.Navigator>
       </NavigationContainer>
     </AuthProvider>
   );
